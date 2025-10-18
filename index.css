@@ -46,8 +46,9 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between; /* ロゴとナビを両端に配置 */
-    align-items: center;
+    /* justify-content: space-between; */ /* ← この行を削除、またはコメントアウト */
+    flex-direction: column; /* 縦並びにする */
+    align-items: center; /* 中央揃えにする */
 }
 
 header .logo {
