@@ -1,147 +1,273 @@
-@charset "UTF-8";
+/* ===== 基本設定 ===== */
 body {
-	margin: 0;
-	padding: 0;
-	line-height: 1.6;
-	background: #fff;
-	background-size: 40px 40px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333; /* 基本の文字色 */
+    background-color: #ffffff; /* 基本の背景色 */
 }
-#outer {
-	margin: 0 auto;
-	width: 1000px;
-	background-color: #fff;
+
+.container {
+    width: 90%;
+    max-width: 1000px; /* PCでの最大幅 */
+    margin: 0 auto; /* 中央揃え */
+    padding: 0 20px;
 }
-header {
-	height: 80px;
-	padding: 20px 30px;
+
+/* ボックスサイズの統一 */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
-.header-inner {
-	padding: 0;
-	font-size: 12px;
-}
-h1 {
-	font-size: 24px;
-	margin: 0;
-	padding: 0;
-}
-h1 a {
-	color: #000;
-	text-decoration: none;
-}
-h1 a:hover {
-	text-decoration: underline;
-}
-h2 {
-	font-size: 22px;
-	margin: 0;
-	padding: 10px;
-	background-color: #D6E7EE;
-}
-h2 a {
-	text-decoration: none;
-	color: #265699;
-}
-p {
-	margin: 1em 0;
-}
-.aka {
-	color: #B0231D;
-	font-weight: bold;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border: 0;
-}
+
 a {
-	color: #094a94;
+    color: #007bff; /* リンクの色 (メインカラー) */
+    text-decoration: none;
 }
-#content {
-	padding: 0 20px;
+
+a:hover {
+    text-decoration: underline;
 }
-#content::after {
-	content: "";
-	display: table;
-	clear: both;
+
+img {
+    max-width: 100%;
+    height: auto;
 }
-.inner {
-	float: right;
-	width: 640px;
-	margin: 0;
-	padding: 10px 20px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+/* ===== ヘッダー ===== */
+header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    position: sticky; /* スクロールしても追従 */
+    top: 0;
+    z-index: 100;
 }
-aside {
-	padding: 20px;
-	color: #676767;
-	width: 220px;
-	float: left;
-	background-color: #f8f8f8;
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* ロゴとナビを両端に配置 */
+    align-items: center;
 }
-.left-title {
-	padding: 10px;
-	font-weight: bold;
-	color: #333;
+
+header .logo {
+    font-size: 24px;
+    margin: 0;
+    color: #222;
+    font-weight: bold;
 }
-.link {
-	margin: 0;
-	padding: 0 0 10px 0;
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
 }
-.link a {
-	color: #094a94;
-	text-decoration: none;
+
+header nav li {
+    margin-left: 25px;
 }
-.link a:hover {
-	text-decoration: underline;
+
+header nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
 }
-ul {
-	margin: 0 0 0 1em;
-	padding: 0;
+
+header nav a:hover {
+    color: #007bff; /* メインカラー */
+    text-decoration: none;
 }
-.link li {
-	list-style: none;
-	padding: 4px 0;
+
+/* ===== ヒーローセクション ===== */
+#hero {
+    background: #f4f8ff; /* 薄い背景色 */
+    padding: 80px 0;
+    text-align: center;
 }
+
+#hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+#hero p {
+    font-size: 18px;
+    color: #444;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* プロフィール写真 (HTMLのコメントを解除した場合) */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 丸く切り抜き */
+    margin-top: 30px;
+    object-fit: cover; /* 画像の比率を保ったままトリミング */
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== 共通セクション設定 ===== */
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* セクションタイトルの下線 */
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #007bff; /* メインカラー */
+}
+
+.bg-light {
+    background-color: #f9f9f9; /* 明るい背景色 */
+}
+
+/* ===== スキル (Skills) ===== */
+.skill-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* 折り返しあり */
+    justify-content: center;
+    gap: 15px; /* スキル間の隙間 */
+}
+
+.skill-list li {
+    background: #e9ecef;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 20px; /* 角を丸く */
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ===== 実績 (Works) ===== */
+.works-grid {
+    display: grid;
+    /* PCでは3カラム */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* カード間の隙間 */
+}
+
+.work-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* 角丸を画像にも適用 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-item:hover {
+    transform: translateY(-5px); /* 少し浮き上がる */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.work-item img {
+    width: 100%;
+    height: 200px; /* 画像の高さを統一 */
+    object-fit: cover; /* 比率を保ったままトリミング */
+    display: block;
+}
+
+.work-item h3 {
+    font-size: 20px;
+    padding: 15px 20px 0 20px;
+    margin: 0;
+}
+
+.work-item p {
+    padding: 10px 20px;
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.work-item a {
+    display: inline-block;
+    padding: 0 20px 15px 20px;
+    font-weight: bold;
+}
+
+/* ===== コンタクト (Contact) ===== */
+#contact {
+    text-align: center;
+}
+
+.contact-email {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+/* ===== フッター ===== */
 footer {
-	text-align: center;
-	color: #666;
-	font-size: 15px;
-	height: 100px;
-	padding-top: 40px;
-	clear: both;
+    background: #333;
+    color: #eee;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
 }
-blockquote {
-	border: 1px solid #ccc;
-	padding: 5px;
-	margin: 10px;
+
+footer p {
+    margin: 0;
+    font-size: 14px;
 }
+
+/* ===== レスポンシブ対応 (スマートフォン) ===== */
 @media (max-width: 768px) {
-#outer {
-	width: 100%;
-	padding: 0;
+    /* ヘッダーの調整 */
+    header .container {
+        flex-direction: column; /* 縦並びにする */
+    }
+    
+    header nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header nav li {
+        margin: 5px 10px;
+    }
+
+    /* ヒーローセクション */
+    #hero h2 {
+        font-size: 28px;
+    }
+    #hero p {
+        font-size: 16px;
+    }
+
+    /* セクション */
+    .section h2 {
+        font-size: 28px;
+    }
+
+    /* 実績 (Works) グリッド */
+    .works-grid {
+        /* スマホでは1カラム */
+        grid-template-columns: 1fr; 
+    }
 }
-#content {
-	padding: 0 10px;
-}
-.inner, aside {
-	float: none;
-	width: 100%;
-}
-.inner {
-	margin: 0;
-	padding: 10px 0;
-	box-shadow: none;
-}
-aside {
-	padding: 10px 0;
-}
-.header-inner {
-	font-size: 10px;
-}
-h1 {
-	font-size: 20px;
-}
-h2 {
 	font-size: 20px;
 }
 }
