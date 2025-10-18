@@ -1,41 +1,101 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>あなたのＨＰタイトル</title>
-<meta name="keywords" content="ページのキーワードA,B,C">
-<meta name="description" content="ページの説明">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【あなたの名前】 - ポートフォリオ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="outer">
-<header>
-<div class="header-inner">
-<h1>あなたのＨＰタイトル</h1>
-<p>あなたのＨＰの説明文</p>
-</div>
-</header>
-<div id="content">
-<div class="inner">
-<h2>記事ページ見出し・大</h2>
-<p>文章あれこれ</p>
-<h3>記事ページ見出し・中</h3>
-<p>文章あれこれ</p>
-<h4>記事ページ見出し・小</h4>
-<p>文章あれこれ</p>
-</div>
-<aside>
-<div class="left-title">サイドバータイトル</div>
-<div class="link">
-<ul>
-<li>記事ページへのリンク</li>
-<li>記事ページへのリンク</li>
-</ul>
-</div>
-</aside>
-</div>
-<footer>© 2010 あなたのホームページ</footer>
-</div>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">【あなたの名前】</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>【あなたのキャッチコピー】</h2>
+                <p>【あなたの簡単な自己紹介や専門性をここに記述します。例：Web開発者として、ユーザー中心の使いやすいサイトを構築しています。】</p>
+                </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    【ここにあなたの経歴、強み、パーソナリティなどを詳しく書きます。】
+                </p>
+                <p>
+                    【どのような価値を提供できるか、仕事に対する姿勢などを具体的にアピールしましょう。】
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="section bg-light">
+            <div class="container">
+                <h2>Skills</h2>
+                <ul class="skill-list">
+                    <li>【スキル1 例：HTML5 & CSS3】</li>
+                    <li>【スキル2 例：JavaScript (React, Vue.js)】</li>
+                    <li>【スキル3 例：Python (Django, Flask)】</li>
+                    <li>【スキル4 例：UI/UXデザイン (Figma)】</li>
+                    <li>【スキル5 例：プロジェクト管理】</li>
+                    <li>【スキル6】</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="works" class="section">
+            <div class="container">
+                <h2>Works</h2>
+                <div class="works-grid">
+                    <div class="work-item">
+                        <img src="https://via.placeholder.com/400x300" alt="実績1の画像">
+                        <h3>【プロジェクト名 1】</h3>
+                        <p>【プロジェクトの簡単な説明。使用技術や担当領域など。】</p>
+                        <a href="【実績の詳細ページやURL】" target="_blank">詳細を見る &gt;</a>
+                    </div>
+                    <div class="work-item">
+                        <img src="https://via.placeholder.com/400x300" alt="実績2の画像">
+                        <h3>【プロジェクト名 2】</h3>
+                        <p>【プロジェクトの簡単な説明。使用技術や担当領域など。】</p>
+                        <a href="【実績の詳細ページやURL】" target="_blank">詳細を見る &gt;</a>
+                    </div>
+                    <div class="work-item">
+                        <img src="https://via.placeholder.com/400x300" alt="実績3の画像">
+                        <h3>【プロジェクト名 3】</h3>
+                        <p>【プロジェクトの簡単な説明。使用技術や担当領域など。】</p>
+                        <a href="【実績の詳細ページやURL】" target="_blank">詳細を見る &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-light">
+            <div class="container">
+                <h2>Contact</h2>
+                <p>お仕事のご依頼やご相談は、以下のメールアドレスまでお気軽にご連絡ください。</p>
+                <p class="contact-email">【your.email@example.com】</p>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 【あなたの名前】. All Rights Reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
