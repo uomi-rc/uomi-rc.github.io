@@ -10,7 +10,6 @@ body {
 
 .container {
     width: 90%;
-    /* ★★★ ここを変更しました ★★★ */
     max-width: 800px; /* PCでの最大幅を800pxに制限 */
     margin: 0 auto; /* 中央揃え */
     padding: 0 20px;
@@ -40,7 +39,7 @@ header {
     background: #fff;
     border-bottom: 1px solid #eee;
     padding: 20px 0;
-    position: sticky; /* スクロールしても追従 */
+    position: sticky;
     top: 0;
     z-index: 100;
 }
@@ -81,7 +80,7 @@ header nav a:hover {
     text-decoration: none;
 }
 
-/* ===== ヒーローセクション ===== */
+/* ===== ヒーローセクション (このテンプレートでは未使用) ===== */
 #hero {
     background: #f4f8ff; /* 薄い背景色 */
     padding: 80px 0;
@@ -101,17 +100,6 @@ header nav a:hover {
     margin: 0 auto;
 }
 
-/* プロフィール写真 (HTMLのコメントを解除した場合) */
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* 丸く切り抜き */
-    margin-top: 30px;
-    object-fit: cover; /* 画像の比率を保ったままトリミング */
-    border: 5px solid #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
 /* ===== 共通セクション設定 ===== */
 .section {
     padding: 60px 0;
@@ -125,7 +113,6 @@ header nav a:hover {
     padding-bottom: 10px;
 }
 
-/* セクションタイトルの下線 */
 .section h2::after {
     content: '';
     position: absolute;
@@ -141,29 +128,9 @@ header nav a:hover {
     background-color: #f9f9f9; /* 明るい背景色 */
 }
 
-/* ===== スキル (Skills) ===== */
-.skill-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap; /* 折り返しあり */
-    justify-content: center;
-    gap: 15px; /* スキル間の隙間 */
-}
-
-.skill-list li {
-    background: #e9ecef;
-    color: #333;
-    padding: 10px 20px;
-    border-radius: 20px; /* 角を丸く */
-    font-size: 16px;
-    font-weight: 500;
-}
-
 /* ===== 実績 (Works) ===== */
 .works-grid {
     display: grid;
-    /* PCでは3カラム */
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px; /* カード間の隙間 */
 }
@@ -171,7 +138,7 @@ header nav a:hover {
 .work-item {
     border: 1px solid #ddd;
     border-radius: 8px;
-    overflow: hidden; /* 角丸を画像にも適用 */
+    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -183,8 +150,8 @@ header nav a:hover {
 
 .work-item img {
     width: 100%;
-    height: 200px; /* 画像の高さを統一 */
-    object-fit: cover; /* 比率を保ったままトリミング */
+    height: 200px;
+    object-fit: cover;
     display: block;
 }
 
@@ -233,13 +200,14 @@ footer p {
     font-size: 14px;
 }
 
-/* ===== レスポンシブ対応 (スマートフォン) ===== */
-@media (max-width: 768px) {
-    /* ヘッダーの調整 */
-    header .container {
-        flex-direction: column; /* 縦並びにする */
+/* ===== レスポンシブ対応 (スマートフォン・タブレット) ===== */
+@media (max-width: 1099px) {
+    .works-grid {
+        grid-template-columns: 1fr; 
     }
-    
+}
+
+@media (max-width: 768px) {
     header nav ul {
         margin-top: 15px;
         flex-wrap: wrap;
@@ -250,23 +218,45 @@ footer p {
         margin: 5px 10px;
     }
 
-    /* ヒーローセクション */
-    #hero h2 {
-        font-size: 28px;
-    }
-    #hero p {
-        font-size: 16px;
-    }
-
-    /* セクション */
     .section h2 {
         font-size: 28px;
     }
-
-    /* 実績 (Works) グリッド */
-    .works-grid {
-        /* スマホでは1カラム */
-        grid-template-columns: 1fr; 
-    }
 }
 
+/* ★★★★★ ここから追加・修正したコード ★★★★★ */
+/* ===== ワイドスクリーン用の2カラムレイアウト (1100px以上で適用) ===== */
+@media screen and (min-width: 1100px) {
+    /* bodyをグリッドコンテナに設定 */
+    body {
+        display: grid;
+        /* 左に固定幅のサイドバー、右に残りのスペース */
+        grid-template-columns: 320px 1fr;
+    }
+
+    /* ヘッダーを左サイドバーとして配置 */
+    header {
+        grid-column: 1 / 2; /* 1列目に配置 */
+        height: 100vh; /* 画面の高さいっぱいに広げる */
+        position: sticky; /* スクロールに追従 */
+        top: 0;
+        border-bottom: none; /* 下線を削除 */
+        border-right: 1px solid #eee; /* 右側に境界線を追加 */
+        padding-top: 40px; /* 上部に余白を追加 */
+        z-index: 100;
+    }
+    
+    /* ヘッダー内のコンテナの幅をサイドバーに合わせる */
+    header .container {
+        width: 100%;
+        padding: 0 30px; /* サイドバー内の左右の余白 */
+    }
+
+    /* メインコンテンツとフッターを右側に配置 */
+    main,
+    footer {
+        grid-column: 2 / 3; /* 2列目に配置 */
+    }
+
+    /* メインとフッター内のコンテナは最大幅を保つため、
+       右カラムが広すぎても文章は読みやすい幅に保たれる */
+}
