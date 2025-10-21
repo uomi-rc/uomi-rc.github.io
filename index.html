@@ -7,8 +7,44 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .logo-image {
-            width: 500px;  /* ← ここの数字を調整して好きな幅に */
-            height: auto;  /* ← これは「縦横比を保ったまま高さを自動調整」の意味 */
+            width: 300px;  /* 横幅を少し抑えめに（好みで調整可） */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* ===== 横幅1100px以上では左に固定・右に本文 ===== */
+        @media screen and (min-width: 1100px) {
+            body {
+                display: grid;
+                grid-template-columns: 350px 1fr; /* 左が固定幅、右が可変 */
+            }
+
+            header {
+                grid-column: 1 / 2;
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                border-right: 1px solid #eee;
+                background: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            header .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                padding: 40px 20px;
+            }
+
+            /* 右側メインコンテンツ */
+            main, footer {
+                grid-column: 2 / 3;
+            }
         }
     </style>
 </head>
@@ -17,35 +53,23 @@
     <header>
         <div class="container">
             <h1 class="logo">Teiichi Murakami</h1>
-            <p><img src="imageforio/IMG_0118.JPEG" class="logo-image"></p>
-     <!--
-            <nav>
-                <ul>
-                    <li><a href="#about">About me</a></li>
-                    <li><a href="#Career">Career</a></li>
-                    <li><a href="#Robot competition career">Robot competition career</a></li>
-                    <li><a href="#Achievement">Achievement</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-    -->
+            <p><img src="imageforio/IMG_0118.JPEG" class="logo-image" alt="Teiichi Murakami"></p>
         </div>
     </header>
 
     <main>
-           <section id="about" class="section">
+        <section id="about" class="section">
             <div class="container">
                 <h2>About Me</h2>
                 <p>
                     ロボコンが大好きな大学生です．
                     小学生からの夢であった<a href="https://official-robocon.com/gakusei/" target="_blank" rel="noopener">NHK学生ロボコン</a>
                     に出場するため大阪工業大学に入学し，<a href="https://x.com/OIT_RoboPro" target="_blank" rel="noopener">ロボットプロジェクト</a>
-に参加しました．
+                    に参加しました．
                     ロボットプロジェクトではロボットを設計するメカ班のリーダーを担い，2年連続の全国大会出場を果たしました．
                     現在は他大学の学生とともに<a href="https://x.com/TsukubaRover" target="_blank" rel="noopener">T.R.T</a>という団体で火星ローバーを製作しており，世界最大級のローバー大会
                     <a href="https://urc.marssociety.org" target="_blank" rel="noopener">University Rover Challenge</a>への出場を目指しています．
                 </p>
-              
             </div>
         </section>
 
@@ -62,60 +86,10 @@
             </div>
         </section>
         
-         <section id="Robot competition career" class="section bg-light">
+        <section id="Robot competition career" class="section bg-light">
             <div class="container">
                 <h2>Robot competition career</h2>
                 <ul class="Robot competition career-list">
-                    <li> <a href="https://www.oit.ac.jp/news/topics/topics9290.html" target="_blank" rel="noopener">2023 NHK学生ロボコン</a> 全国大会出場 予選リーグ敗退・デザイン賞 担当:ロボット加工組立て</li>
-                    <li> <a href="https://www.oit.ac.jp/news/topics/topics10106.html" target="_blank" rel="noopener">2024 NHK学生ロボコン</a> 全国大会出場 予選リーグ敗退 担当:メカ班リーダー・メカ全体設計・選手</li>
-                    <li> <a href="https://www.oit.ac.jp/oit/overthelimit/oit-project/makaizo/" target="_blank" rel="noopener">2024 魔改造の夜-脚立25m走 O阪工大</a> 担当:メカ設計</li>
-                    <li> <a href="https://www.oit.ac.jp/news/topics/topics202506111.html" target="_blank" rel="noopener">2025 NHK学生ロボコン</a> 全国大会出場 ベスト8・アイデア賞 担当:コーチ・メカ設計・練習フィールド設計製作</li>
-                    <li> <a href="https://www.instagram.com/oit_rd/p/DPzn09MErD5/" target="_blank" rel="noopener">2025 キャチロボバトルコンテスト</a> 全国ベスト8 担当:メカ設計・ピットメンバー(選手サポート)</li>
-                </ul>
-            </div>
-        </section>
+                    <li><a href="https://www.oit.ac.jp/news/topics/topics9290.html" target="_blank" rel="noopener">2023 NHK学生ロボコン</a> 全国大会出場 予選リーグ敗退・デザイン賞 担当:ロボット加工組立て</li>
+                    <li><a href="https://www.oit.ac.jp/news/topics/topics10106.html" target="_blank" rel="noopener">2024 NHK学生ロボコン</a> 全国大会出場 予選リーグ敗退 担当:メカ班リーダー・メカ全体設計・_
 
-        <section id="Achievement" class="section">
-            <div class="container">
-                <h2>Achievement</h2>
-                <div class="works-grid">
-                    <div class="work-item">
-                        <img src="https://via.placeholder.com/400x300" alt="実績1の画像">
-                        <h3>【NHK学生ロボコン 2024】</h3>
-                        <p>【プロジェクトの簡単な説明。使用技術や担当領域など。】</p>
-                        <a href="【実績の詳細ページやURL】" target="_blank">詳細を見る &gt;</a>
-                    </div>
-                    <div class="work-item">
-                        <img src="https://via.placeholder.com/400x300" alt="実績2の画像">
-                        <h3>【プロジェクト名 2】</h3>
-                        <p>【プロジェクトの簡単な説明。使用技術や担当領域など。】</p>
-                        <a href="【実績の詳細ページやURL】" target="_blank">詳細を見る &gt;</a>
-                    </div>
-                    <div class="work-item">
-                        <img src="https://via.placeholder.com/400x300" alt="実績3の画像">
-                        <h3>【プロジェクト名 3】</h3>
-                        <p>【プロジェクトの簡単な説明。使用技術や担当領域など。】</p>
-                        <a href="【実績の詳細ページやURL】" target="_blank">詳細を見る &gt;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section bg-light">
-            <div class="container">
-                <h2>Contact</h2>
-                <p>ご連絡は以下までよろしくお願いします</p>
-                <p class="contact-email">Email:e1x22083@oit.ac.jp</p>
-                <p class="contact-twitter">Twitter:<a href="https://x.com/embarkonrobo" target="_blank" rel="noopener">@embarkonrobo</a></p>
-                </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 村上禎一. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
