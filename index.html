@@ -8,7 +8,7 @@
     <style>
        .logo-image {
         width: 100%;          /* ← ここが重要：親要素（headerの350px幅）の80% */
-        max-width: 600px;    /* ← 最大サイズを制限 */
+        max-width: 500px;    /* ← 最大サイズを制限 */
         height: auto;
         border-radius: 8px;
         display: block;
@@ -17,10 +17,10 @@
     }
 
         /* ===== 横幅1100px以上では左に固定・右に本文 ===== */
-        @media screen and (min-width: 700px) {
+        @media screen and (min-width: 600px) {
             body {
                 display: grid;
-                grid-template-columns:700px 1fr;
+                grid-template-columns:600px 1fr;
             }
 
             header {
