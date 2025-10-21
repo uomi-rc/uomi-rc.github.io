@@ -47,7 +47,7 @@ header {
 
 .logo-image {
     /* 影を追加 (横0, 縦4px, ぼかし10px, 色は黒の10%透明) */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     
     /* 任意: 画像の角を少し丸めると、影が柔らかく見えます */
     border-radius: 8px; 
