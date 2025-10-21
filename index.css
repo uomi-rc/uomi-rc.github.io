@@ -225,7 +225,7 @@ footer p {
 
 /* ★★★★★ ここから追加・修正したコード ★★★★★ */
 /* ===== ワイドスクリーン用の2カラムレイアウト (1100px以上で適用) ===== */
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 800px) {
     /* bodyをグリッドコンテナに設定 */
     body {
         display: grid;
