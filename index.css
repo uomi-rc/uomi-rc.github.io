@@ -10,7 +10,8 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1000px; /* PCでの最大幅 */
+    /* ★★★ ここを変更しました ★★★ */
+    max-width: 800px; /* PCでの最大幅を800pxに制限 */
     margin: 0 auto; /* 中央揃え */
     padding: 0 20px;
 }
@@ -46,7 +47,6 @@ header {
 
 header .container {
     display: flex;
-    /* justify-content: space-between; */ /* ← この行を削除、またはコメントアウト */
     flex-direction: column; /* 縦並びにする */
     align-items: center; /* 中央揃えにする */
 }
@@ -59,7 +59,7 @@ header .logo {
 }
 
 header nav ul {
-    margin: 0;
+    margin: 10px 0 0 0;
     padding: 0;
     list-style: none;
     display: flex;
@@ -269,6 +269,4 @@ footer p {
         grid-template-columns: 1fr; 
     }
 }
-	font-size: 20px;
-}
-}
+
