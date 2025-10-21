@@ -228,7 +228,7 @@ footer p {
 @media screen and (min-width: 1100px) {
     body {
         display: grid;
-        grid-template-columns: 350px 1fr; /* 左固定・右可変 */
+        grid-template-columns: 500px 1fr; /* 左固定・右可変 */
     }
 
     header {
