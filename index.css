@@ -226,48 +226,34 @@ footer p {
 /* ★★★★★ ここから追加・修正したコード ★★★★★ */
 /* ===== ワイドスクリーン用の2カラムレイアウト (1100px以上で適用) ===== */
 @media screen and (min-width: 1100px) {
-    /* ===== 既存のサイドバー設定はそのまま ===== */
     body {
         display: grid;
-        grid-template-columns: 320px 1fr;
+        grid-template-columns: 350px 1fr; /* 左：固定、右：本文 */
     }
 
     header {
         grid-column: 1 / 2;
-        height: 100vh;
         position: sticky;
         top: 0;
+        height: 100vh;
         border-right: 1px solid #eee;
-        padding-top: 40px;
-    }
+        background: #fff;
 
-    /* ===== ここから追加部分 ===== */
-    header .container {
-        display: flex;
-        flex-direction: column; /* 縦積みではなく、部分的に分割する */
-        height: 100%;
-    }
-
-    /* 上部（名前＋画像）を左側に固定領域として扱う */
-    .header-top {
-        flex: 0 0 auto;
+        /* 👇中央寄せをやめて上寄せに変更 */
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start; /* 上に寄せる */
+        padding-top: 40px; /* 少し余白を加える */
     }
 
-    .header-top img {
-        width: 180px;
-        border-radius: 50%;
-        margin-top: 20px;
+    header .container {
+        width: 100%;
+        text-align: center;
+        padding: 0 20px;
     }
 
-    /* 下部（ナビゲーションなど）を右側に広げる部分として扱う */
-    .header-bottom {
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    main, footer {
+        grid-column: 2 / 3;
     }
 }
-
