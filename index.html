@@ -33,24 +33,22 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: flex-start; /* 👈 上寄せ */
-                padding-top: 40px;
+              　justify-content: space-between;  /* 👈 上と下に要素を分ける（重要！） */
+                padding: 40px 20px;
+      　　　　　 box-sizing: border-box;
             }
 
+            
             header .container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-                padding: 0 20px;
-            }
+             width: 100%;
+             text-align: center;
+             margin-top: 0;
+         }
 
-            main, footer {
-                grid-column: 2 / 3;
-            }
-        }
+        main, footer {
+        grid-column: 2 / 3;
+     }
+ }
     </style>
 </head>
 <body>
