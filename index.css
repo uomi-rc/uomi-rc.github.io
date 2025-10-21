@@ -225,38 +225,49 @@ footer p {
 
 /* ★★★★★ ここから追加・修正したコード ★★★★★ */
 /* ===== ワイドスクリーン用の2カラムレイアウト (1100px以上で適用) ===== */
-@media screen and (min-width: 800px) {
-    /* bodyをグリッドコンテナに設定 */
+@media screen and (min-width: 1100px) {
+    /* ===== 既存のサイドバー設定はそのまま ===== */
     body {
         display: grid;
-        /* 左に固定幅のサイドバー、右に残りのスペース */
         grid-template-columns: 320px 1fr;
     }
 
-    /* ヘッダーを左サイドバーとして配置 */
     header {
-        grid-column: 1 / 2; /* 1列目に配置 */
-        height: 100vh; /* 画面の高さいっぱいに広げる */
-        position: sticky; /* スクロールに追従 */
+        grid-column: 1 / 2;
+        height: 100vh;
+        position: sticky;
         top: 0;
-        border-bottom: none; /* 下線を削除 */
-        border-right: 1px solid #eee; /* 右側に境界線を追加 */
-        padding-top: 40px; /* 上部に余白を追加 */
-        z-index: 100;
+        border-right: 1px solid #eee;
+        padding-top: 40px;
     }
-    
-    /* ヘッダー内のコンテナの幅をサイドバーに合わせる */
+
+    /* ===== ここから追加部分 ===== */
     header .container {
-        width: 100%;
-        padding: 0 30px; /* サイドバー内の左右の余白 */
+        display: flex;
+        flex-direction: column; /* 縦積みではなく、部分的に分割する */
+        height: 100%;
     }
 
-    /* メインコンテンツとフッターを右側に配置 */
-    main,
-    footer {
-        grid-column: 2 / 3; /* 2列目に配置 */
+    /* 上部（名前＋画像）を左側に固定領域として扱う */
+    .header-top {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* メインとフッター内のコンテナは最大幅を保つため、
-       右カラムが広すぎても文章は読みやすい幅に保たれる */
+    .header-top img {
+        width: 180px;
+        border-radius: 50%;
+        margin-top: 20px;
+    }
+
+    /* 下部（ナビゲーションなど）を右側に広げる部分として扱う */
+    .header-bottom {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
+
