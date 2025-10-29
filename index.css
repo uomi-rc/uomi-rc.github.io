@@ -274,3 +274,58 @@ footer p {
         grid-column: 2 / 3;
     }
 }
+
+/* =========================================================
+   ダークモード切替ボタン + ダークテーマ設定
+========================================================= */
+
+/* 切替ボタンのスタイル */
+.theme-toggle {
+  margin-top: 20px;
+  padding: 10px 18px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+/* === ダークモード全体 === */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  background-image: none; /* 背景グリッドを消す */
+}
+
+/* 明るい背景を使っている要素の反転 */
+body.dark-mode header {
+  background-color: #2a2a2a;
+  border-right: 1px solid #444;
+}
+
+body.dark-mode .bg-light {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode a {
+  color: #4da3ff;
+}
+
+body.dark-mode footer {
+  background-color: #111;
+  color: #ccc;
+}
+
+/* ボタンも反転 */
+body.dark-mode .theme-toggle {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
