@@ -299,33 +299,32 @@ footer p {
 
 /* === ダークモード全体 === */
 body.dark-mode {
-  background-color: #1e1e1e;
-  color: #f1f1f1;
-  background-image: none; /* 背景グリッドを消す */
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+  background-image: none !important;
 }
 
 /* 明るい背景を使っている要素の反転 */
 body.dark-mode header {
-  background-color: #2a2a2a;
-  border-right: 1px solid #444;
+  background-color: #2a2a2a !important;
+  border-right: 1px solid #444 !important;
 }
 
 body.dark-mode .bg-light {
-  background-color: #2a2a2a;
+  background-color: #2a2a2a !important;
 }
 
 body.dark-mode a {
-  color: #4da3ff;
+  color: #4da3ff !important;
 }
 
 body.dark-mode footer {
-  background-color: #111;
-  color: #ccc;
+  background-color: #111 !important;
+  color: #ccc !important;
 }
 
-/* ボタンも反転 */
 body.dark-mode .theme-toggle {
-  background-color: #f1f1f1;
-  color: #333;
+  background-color: #f1f1f1 !important;
+  color: #333 !important;
 }
 
