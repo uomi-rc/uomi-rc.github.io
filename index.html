@@ -256,6 +256,32 @@
       <p>&copy; 2025 村上禎一. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // 保存されたテーマを読み込み
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    toggleButton.textContent = '☀️ ライトモード';
+  }
+
+  // ボタンを押した時の切り替え処理
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      toggleButton.textContent = '☀️ ライトモード';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      toggleButton.textContent = '🌙 ダークモード';
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
+
+  
 </body>
 </html>
 
