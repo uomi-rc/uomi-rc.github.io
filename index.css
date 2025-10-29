@@ -4,10 +4,14 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  color: #ffffff; /* 白文字 */
-  background-color: #000000; /* 黒背景 */
-  background-image: none; /* 背景のグリッド線を消す */
+  color: #333; /* ← 文字色（黒っぽい） */
+  background-color: #fafafa; /* ← 背景色（明るいグレー） */
+  background-image:
+    linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+    linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+  background-size: 40px 40px;
 }
+
 
 .container {
     width: 90%;
