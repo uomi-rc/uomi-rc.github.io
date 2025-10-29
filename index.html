@@ -28,6 +28,26 @@
         margin: 0 auto 10px; /* 👈 下に10pxの隙間を追加 */
     }
 
+        <style>
+.work-video {
+    position: relative;
+    width: 100%;
+    max-width: 500px;   /* 👈 最大幅を制限（例: 500px） */
+    aspect-ratio: 16 / 9; /* 👈 縦横比を維持（ブラウザ対応済） */
+    margin: 0 auto;       /* 中央寄せ */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.work-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
         /* ===== 横幅1100px以上では左に固定・右に本文 ===== */
         @media screen and (min-width: 600px) {
             body {
@@ -175,8 +195,6 @@
 
                  　　   <div class="work-video">
     　　　　　　　　　　　　　<iframe src="https://drive.google.com/file/d/1kTVudHUI3wS13UgICoV9kxEFwwMvtHDb/preview" width="640" height="480" allow="autoplay"
-       　　　　　　　　　　　　　　 width="540"
-    　　　　　　　　　　　　　　    height="260"
     　　　　　　　　　　　  　　　  allow="autoplay"
       　　　　　　　　　　　　　　  allowfullscreen>
     　　　　　　　　　　　　　</iframe>
