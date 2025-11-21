@@ -3,296 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teiichi Murakami - ポートフォリオ</title>
+  <title>Teiichi Murakami - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    /* ===============================
-       共通スタイル
-    =============================== */
-    .logo-image {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      border-radius: 8px;
-      display: block;
-      margin: 0 auto;
-      transform-origin: center top;
-    }
-
-    .work-image {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      border-radius: 8px;
-      display: block;
-      margin: 0 auto 10px; /* 下に10pxの隙間 */
-      transform-origin: center top;
-    }
-
-    .work-video {
-      position: relative;
-      width: 100%;
-      max-width: 500px;
-      aspect-ratio: 16 / 9;
-      margin: 0 auto;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .work-video iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* ===============================
-       レイアウト（幅600px以上）
-    =============================== */
-    @media screen and (min-width: 600px) {
-      body {
-        display: grid;
-        grid-template-columns: 600px 1fr;
-      }
-
-      header {
-        grid-column: 1 / 2;
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        border-right: 1px solid #eee;
-        background: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding: 40px 20px;
-        box-sizing: border-box;
-      }
-
-      header .container {
-        width: 100%;
-        text-align: center;
-        margin-top: 0;
-      }
-
-      main,
-      footer {
-        grid-column: 2 / 3;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <!-- =========================================================
-       HEADER（左側固定：名前と画像）
-  ========================================================= -->
-  <header>
-    <div class="container">
-      <h1 class="logo">Teiichi Murakami</h1>
-      <p><img src="imageforio/IMG_0118.JPEG" class="logo-image" alt="Teiichi Murakami"></p>
 
-      <div id="contact">
-        <div class="contact-email">Email: e1x22083@oit.ac.jp</div>
-        <div class="contact-twitter">
-          Twitter:
-          <a href="https://x.com/embarkonrobo" target="_blank" rel="noopener">@embarkonrobo</a>
+  <div class="layout-wrapper">
+    <header class="sidebar">
+      <div class="sidebar-inner">
+        <div class="profile-area">
+          <h1 class="logo">Teiichi<br>Murakami</h1>
+          <div class="profile-img-wrapper">
+            <img src="imageforio/IMG_0118.JPEG" class="profile-img" alt="Teiichi Murakami">
+          </div>
+          <p class="sub-title">Robotics Engineer / Student</p>
+        </div>
+
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#robocon">Robocon Career</a></li>
+            <li><a href="#achievement">Achievement</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-contact">
+          <a href="https://x.com/embarkonrobo" target="_blank" rel="noopener" class="btn-sns">Twitter (X)</a>
         </div>
       </div>
-    </div>
+    </header>
 
-  </header>
-
-  <!-- =========================================================
-       MAIN CONTENTS
-  ========================================================= -->
-  <main>
-    <!-- =====================================================
-         ABOUT ME（自己紹介）
-    ===================================================== -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>
-          ロボコンを通したロボット開発が大好きな大学生です．
-          小学生からの夢であった
-          <a href="https://official-robocon.com/gakusei/" target="_blank" rel="noopener">NHK学生ロボコン</a>
-          に出場するため大阪工業大学に入学し，
-          <a href="https://x.com/OIT_RoboPro" target="_blank" rel="noopener">ロボットプロジェクト</a>
-          に参加しました．
-          ロボットプロジェクトではロボットを設計するメカ班のリーダーを担い，
-          2年連続の全国大会出場を果たしました．
-          現在は他大学の学生とともに
-          <a href="https://x.com/TsukubaRover" target="_blank" rel="noopener">T.R.T</a>
-          という団体で火星ローバーを製作しており，
-          世界最大級のローバー大会
-          <a href="https://urc.marssociety.org" target="_blank" rel="noopener">University Rover Challenge</a>
-          への出場を目指しています．
-        </p>
-      </div>
-    </section>
-
-    <!-- =====================================================
-         CAREER（経歴）
-    ===================================================== -->
-    <section id="Career" class="section bg-light">
-      <div class="container">
-        <h2>Career</h2>
-        <ul class="Carerr-list">
-          <li>2022/3 滝川高等学校　国際理数コース　卒業</li>
-          <li>2022/4 大阪工業大学　ロボティクス&デザイン工学部　ロボット工学科　入学</li>
-          <li>2024/10 <a href="https://www.oit.ac.jp/laboratory/room/82/index.html" target="_blank" rel="noopener">井上雄紀研究室</a>　配属</li>
-          <li>2025/5 <a href="https://yev.jp/aboutus/" target="_blank" rel="noopener">株式会社YeV</a>　入社(アルバイト・CAD設計開発アシスタント)</li>
-          <li>（2026/3　学部卒業見込み）</li>
-          <li>（2026/4　大阪工業大学 大学院入学見込み）</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- =====================================================
-         ROBOT COMPETITION CAREER（ロボコン経歴）
-    ===================================================== -->
-    <section id="Robot competition career" class="section bg-light">
-      <div class="container">
-        <h2>Robot competition career</h2>
-        <ul class="Robot competition career-list">
-          <li><a href="https://www.oit.ac.jp/news/topics/topics9290.html" target="_blank" rel="noopener">2023 NHK学生ロボコン</a> 全国大会出場 予選リーグ敗退・デザイン賞 担当:ロボット加工組立て</li>
-          <li><a href="https://www.oit.ac.jp/news/topics/topics10106.html" target="_blank" rel="noopener">2024 NHK学生ロボコン</a> 全国大会出場 予選リーグ敗退 担当:メカ班リーダー・メカ全体設計・選手</li>
-          <li><a href="https://www.oit.ac.jp/oit/overthelimit/oit-project/makaizo/" target="_blank" rel="noopener">2024 魔改造の夜-脚立25m走 O阪工大</a> 担当:メカ設計</li>
-          <li><a href="https://www.oit.ac.jp/news/topics/topics202506111.html" target="_blank" rel="noopener">2025 NHK学生ロボコン</a> 全国大会出場 ベスト8・アイデア賞 担当:コーチ・メカ設計・練習フィールド設計製作</li>
-          <li><a href="https://www.instagram.com/oit_rd/p/DPzn09MErD5/" target="_blank" rel="noopener">2025 キャチロボバトルコンテスト</a> 全国ベスト8 担当:メカ設計・ピットメンバー(選手サポート)</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- =====================================================
-         ACHIEVEMENT（実績・作品紹介）
-    ===================================================== -->
-    <section id="Achievement" class="section">
-      <div class="container">
-        <h2>Achievement</h2>
-
-        <div class="works-grid">
-          <!-- === 実績1 === -->
-          <div class="work-item">
-            <h3>【NHK学生ロボコン 2024】</h3>
-            <p>
-              【大会概要：全国からビデオ審査などの事前選考を通過した大学と高等専門学校の18チームが参加．
-              競技テーマは「Harvest Day」で，ABU Robocon2024の開催地であるベトナムの稲作にちなんだ競技となっています．
-              各チームは2台のロボットR1(手動機)，R2(自律機)を使用して、稲植え・籾の収穫・収納といった課題達成を目指します．】
-            </p>
-
-            <ul>
-              <li>
-                <a href="https://youtu.be/wpgzbLFMdbY?si=fWah4CqHtiGpnlpw" target="_blank" rel="noopener">
-                  大会公式のルール紹介動画（音声：英語）
-                </a>
-              </li>
-            </ul>
-
-            <div class="work-image">
-              <img src="imageforio/IMG_8114.JPG" class="work-image" alt="R1とR2">
-              <img src="imageforio/IMG_1426.JPG" class="work-image" alt="R1">
-            </div>
-
-            <div class="work-video">
-              <iframe
-                src="https://drive.google.com/file/d/1kTVudHUI3wS13UgICoV9kxEFwwMvtHDb/preview"
-                width="640"
-                height="480"
-                allow="autoplay"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-
-           <p>
-              【担当領域：手動機R1と完全自律機R2のすべてのメカ設計(Fusion360使用)，および部品加工を担当．大会当日試合に出場する選手メンバーを兼任】
-            </p>
-
-<p>
-   【開発ポイント：プロジェクトのメインメンバーである執行代は私含め5人しかおらず，下級生メンバーを含めても8人ほどしかいませんでした．その上，2024大会のルールでは大阪工業大学ロボットプロジェクト初となる完全自律機の製作が必須です．
-  そのため，チームの目標を「全国大会出場のための最低限の機能を実装すること」と定めました．限られた人手で目標を達成するため，個人的な無駄なこだわりを捨てチームとしての成功だけを考え活動することで，2年連続となる全国大会出場を達成しました．
-  出場までの詳細なレポートは現在執筆中です．】
-</p>
-          <!-- === 実績2 === -->
-          <div class="work-item">
-            <img src="https://via.placeholder.com/400x300" alt="実績2の画像">
-            <h3>【魔改造の夜-脚立25m走】</h3>
-            <p>
-              【プロジェクト概要：魔改造の夜-脚立25m走にO阪工大として参加しました．
-              魔改造の夜とは，「超一流のエンジニアたちが，身の回りの家電やおもちゃをモンスターマシンに変貌させ，
-              アイデアとテクニックを競う技術開発エンタメ番組．日本を代表するような大企業，町工場，大学などが没頭する“本気の遊び”を通して科学のおもしろさを発見し，モノづくり立国・日本の未来をもり立てる．（公式サイトより抜粋）」
-              O阪工大は魔改造の夜初となる学生＋教員合同チームです．
-            </p>
-            <p>  
-              【担当領域:放送内で一部取り上げられたシャクトリムシ型脚立の駆動部分のメカ設計，および部品加工を担当】
-            </p>
-            <p>
-              【開発ポイント:機構の動作は添付の動画をご覧ください．残念ながら様々な事情により，シャクトリムシ型が大会本番に採用されることはありませんでした．
-              しかし，ロボコンよりも圧倒的に短い1.5ヶ月の納期とそれに伴うPDCAサイクルのなかで，学生や教員と意見をぶつけ合いながら開発を進めた経験はとても貴重なものでした．】</p>
-            </p>
-            
-            <div class="work-video">
-              <iframe src="https://drive.google.com/file/d/14Mf9-10kLTovuWo_LBQv-WTzTYSv9REB/preview"
-                width="640"
-                height="480"
-                allow="autoplay">
-              </iframe>
-            </div>
-          </div>
-
-          <!-- === 実績3 === -->
-          <div class="work-item">
-            <img src="https://via.placeholder.com/400x300" alt="実績3の画像">
-            <h3>【NHK学生ロボコン2025】</h3>
-            <p>【大会概要:全国からビデオ審査などの事前選考を通過した大学と高等専門学校の17チームが参加．競技テーマは「ROBOT BASKETBALL」です．
-各チームはロボット2台を用いて，ダンクシュート(7点)，スリーポントシュート(3点)，ツーポイントシュート(2点)の三種類のシュートを行い，合計得点を競います】</p>
-
-             <p>【担当領域:2台のロボットの足まわりのメカ設計，練習用フィールドの設計製作，メカ班のコーチ(下級生へのアドバイザー)を担当</p>
-             <p>【開発のポイント:今年度大会では，ロボットプロジェクトは下図のシューティングロボット(SR)とダンクロボット(DR)を製作しました．
-               SRの足まわりには私が開発した4輪独立ステアリング機構が搭載されています．当該機構の詳しい性能や工夫点などをブログにまとめています．ぜひご覧ください．
-             </p>
-            <a href="https://embarkonrobo.hatenablog.com/entry/2025/06/15/200530" target="_blank" rel="noopener">
-                  学ロボ2025大工大の独ステについて
-                </a>
-            
-            
-          </div>
+    <main class="main-content">
+      
+      <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="text-body">
+          <p>
+            ロボコンを通したロボット開発が大好きな大学生です。
+            小学生からの夢であった<a href="https://official-robocon.com/gakusei/" target="_blank">NHK学生ロボコン</a>に出場するため大阪工業大学に入学し、
+            <a href="https://x.com/OIT_RoboPro" target="_blank">ロボットプロジェクト</a>に参加しました。
+          </p>
+          <p>
+            ロボットプロジェクトではロボットを設計するメカ班のリーダーを担い、2年連続の全国大会出場を果たしました。
+            現在は他大学の学生とともに<a href="https://x.com/TsukubaRover" target="_blank">T.R.T</a>という団体で火星ローバーを製作しており、
+            世界最大級のローバー大会<a href="https://urc.marssociety.org" target="_blank">University Rover Challenge</a>への出場を目指しています。
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- =====================================================
-         CONTACT（連絡先）
-    ===================================================== -->
-    <section id="contact" class="section bg-light">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>ご連絡は以下までよろしくお願いします</p>
-        <p class="contact-email">Email: e1x22083@oit.ac.jp</p>
-        <p class="contact-twitter">
-          Twitter:
-          <a href="https://x.com/embarkonrobo" target="_blank" rel="noopener">@embarkonrobo</a>
-        </p>
-      </div>
-    </section>
-  </main>
+      <section id="career" class="section">
+        <h2 class="section-title">Career</h2>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-date">2022.03</div>
+            <div class="timeline-content">滝川高等学校 国際理数コース 卒業</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-date">2022.04</div>
+            <div class="timeline-content">大阪工業大学 ロボティクス&デザイン工学部 ロボット工学科 入学</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-date">2024.10</div>
+            <div class="timeline-content">
+              <a href="https://www.oit.ac.jp/laboratory/room/82/index.html" target="_blank">井上雄紀研究室</a> 配属
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-date">2025.05</div>
+            <div class="timeline-content">
+              <a href="https://yev.jp/aboutus/" target="_blank">株式会社YeV</a> 入社<br>
+              <span class="text-small">アルバイト・CAD設計開発アシスタント</span>
+            </div>
+          </li>
+          <li class="timeline-item future">
+            <div class="timeline-date">2026.03</div>
+            <div class="timeline-content">学部卒業見込み</div>
+          </li>
+          <li class="timeline-item future">
+            <div class="timeline-date">2026.04</div>
+            <div class="timeline-content">大阪工業大学 大学院入学見込み</div>
+          </li>
+        </ul>
+      </section>
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================= -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 村上禎一. All Rights Reserved.</p>
-    </div>
-  </footer>
+      <section id="robocon" class="section">
+        <h2 class="section-title">Robot Competition Career</h2>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-title"><a href="https://www.oit.ac.jp/news/topics/topics9290.html" target="_blank">2023 NHK学生ロボコン</a></div>
+            <div class="timeline-content">
+              <span class="badge">全国大会出場</span> <span class="badge">デザイン賞</span><br>
+              担当: ロボット加工組立て
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-title"><a href="https://www.oit.ac.jp/news/topics/topics10106.html" target="_blank">2024 NHK学生ロボコン</a></div>
+            <div class="timeline-content">
+              <span class="badge">全国大会出場</span><br>
+              担当: メカ班リーダー・メカ全体設計・選手
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-title"><a href="https://www.oit.ac.jp/oit/overthelimit/oit-project/makaizo/" target="_blank">2024 魔改造の夜-脚立25m走 O阪工大</a></div>
+            <div class="timeline-content">
+              担当: メカ設計
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-title"><a href="https://www.oit.ac.jp/news/topics/topics202506111.html" target="_blank">2025 NHK学生ロボコン</a></div>
+            <div class="timeline-content">
+              <span class="badge">ベスト8</span> <span class="badge">アイデア賞</span><br>
+              担当: コーチ・メカ設計・練習フィールド設計製作
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-title"><a href="https://www.instagram.com/oit_rd/p/DPzn09MErD5/" target="_blank">2025 キャチロボバトルコンテスト</a></div>
+            <div class="timeline-content">
+              <span class="badge">全国ベスト8</span><br>
+              担当: メカ設計・ピットメンバー(選手サポート)
+            </div>
+          </li>
+        </ul>
+      </section>
 
-</body>
-</html>
+      <section id="achievement" class="section">
+        <h2 class="section-title">Achievement</h2>
 
+        <article class="work-card">
+          <h3 class="work-title">NHK学生ロボコン 2024 <span class="work-role">担当: 手動機R1・自律機R2 メカ設計 / 部品加工 / 選手</span></h3>
+          
+          <div class="work-meta">
+            <p><strong>概要:</strong> 競技テーマ「Harvest Day」。ベトナムの稲作を模した競技。手動機と自律機の2台で課題達成を目指す。</p>
+            <a href="https://youtu.be/wpgzbLFMdbY?si=fWah4CqHtiGpnlpw" target="_blank" class="link-text">▶ 大会公式ルール動画</a>
+          </div>
 
+          <div class="media-grid">
+            <img src="imageforio/IMG_8114.JPG" alt="R1とR2">
+            <img src="imageforio/IMG_1426.JPG" alt="R1">
+          </div>
+
+          <div class="video-container">
+             <iframe src="https://drive.google.com/file/d/1kTVudHUI3wS13UgICoV9kxEFwwMvtHDb/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+
+          <div class="work-desc">
+            <h4>開発のポイント</h4>
+            <p>
+              プロジェクトのメインメンバーが5人、下級生を含めても8人という少人数体制の中、大工大初となる完全自律機の製作が必須でした。
+              チーム目標を「全国大会出場のための最低限の機能実装」と定め、個人的なこだわりを捨ててチームの成功に注力した結果、2年連続の全国大会出場を達成しました。
+              （詳細レポート執筆中）
+            </p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <h3 class="work-title">魔改造の夜 - 脚立25m走 <span class="work-role">担当
