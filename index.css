@@ -1,29 +1,48 @@
 /* =====================================================
-   追加：キャプション（タイトル）と余白のスタイル
+   修正・追加：キャプション（タイトル）と余白のスタイル
 ===================================================== */
 
-/* 画像や動画のすぐ下に表示するタイトルの設定 */
-.caption {
-    text-align: center;
-    font-size: 15px;      /* 本文より少しだけ大きく、あるいは見やすく */
-    font-weight: bold;    /* タイトルなので太字に */
-    color: #444;          /* 少し濃いめのグレー */
-    margin-top: 10px;     /* 画像・動画との隙間 */
-    margin-bottom: 40px;  /* 次の文章や要素との大きな隙間（上下の余白） */
-    display: block;       /* 確実に改行させる */
-}
-
-/* 実績内の各段落（pタグ）の上下余白を調整 */
+/* 画像や動画を囲む要素（work-itemなど）の中央揃えを確実にする */
 .work-item {
     text-align: center; /* 子要素（画像、キャプション、動画）を中央に寄せる */
 }
 
-/* 画像自体の下余白をリセット（caption側で制御するため） */
+/* 画像自体のスタイル（既存のものを上書き・調整） */
 .work-image {
-    margin-bottom: 0 !important;
+    display: block;       /* ブロック要素にする */
+    margin-left: auto;    /* 左右中央揃え */
+    margin-right: auto;
+    margin-bottom: 10px;  /* 画像とキャプションの隙間 */
+    max-width: 100%;      /* 親要素からはみ出さない */
+    height: auto;
 }
 
-/* 動画（iframe）の下余白を調整 */
+/* 動画（iframe）のスタイル（既存のものを上書き・調整） */
 .work-video {
-    margin-bottom: 10px;
+    display: block;       /* ブロック要素にする */
+    margin-left: auto;    /* 左右中央揃え */
+    margin-right: auto;
+    margin-bottom: 10px;  /* 動画とキャプションの隙間 */
+    max-width: 100%;      /* 親要素からはみ出さない */
+}
+
+/* 修正：画像や動画の真下・真ん中に表示するキャプションの設定 */
+.caption {
+    display: block;       /* 確実に改行させる */
+    text-align: center;   /* 文字列を中央揃え（真ん中）に */
+    font-size: 15px;      /* 見やすい大きさ */
+    font-weight: bold;    /* タイトルなので太字に */
+    color: #444;          /* 少し濃いめのグレー */
+    margin-top: 0;        /* 画像・動画との隙間は上（image/video）で制御 */
+    margin-bottom: 40px;  /* 【上下の余白】次の要素との大きな隙間 */
+    padding: 0 20px;      /* 左右に少し余裕を持たせる（文字が詰まらないように） */
+}
+
+/* 実績内の各段落（pタグ）のスタイル（中央揃えを解除したい場合） */
+.work-item p:not(.caption) {
+    text-align: left;     /* キャプション以外の本文は左寄せに戻す（読みやすさ優先） */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.8;     /* 行間を少し広げて読みやすく */
+    padding: 0 20px;      /* 左右のパディングを維持 */
 }
