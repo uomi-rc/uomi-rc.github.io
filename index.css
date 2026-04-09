@@ -14,10 +14,8 @@
 }
 
 /* 実績内の各段落（pタグ）の上下余白を調整 */
-.work-item p {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    line-height: 1.8;     /* 行間を少し広げて読みやすく */
+.work-item {
+    text-align: center; /* 子要素（画像、キャプション、動画）を中央に寄せる */
 }
 
 /* 画像自体の下余白をリセット（caption側で制御するため） */
