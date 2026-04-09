@@ -1,48 +1,235 @@
 /* =====================================================
-   修正・追加：キャプション（タイトル）と余白のスタイル
-===================================================== */
-
-/* 画像や動画を囲む要素（work-itemなど）の中央揃えを確実にする */
-.work-item {
-    text-align: center; /* 子要素（画像、キャプション、動画）を中央に寄せる */
+   基本設定
+   ===================================================== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+    background-image:
+        linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+        linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+    background-size: 40px 40px;
 }
 
-/* 画像自体のスタイル（既存のものを上書き・調整） */
-.work-image {
-    display: block;       /* ブロック要素にする */
-    margin-left: auto;    /* 左右中央揃え */
-    margin-right: auto;
-    margin-bottom: 10px;  /* 画像とキャプションの隙間 */
-    max-width: 100%;      /* 親要素からはみ出さない */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
     height: auto;
 }
 
-/* 動画（iframe）のスタイル（既存のものを上書き・調整） */
-.work-video {
-    display: block;       /* ブロック要素にする */
-    margin-left: auto;    /* 左右中央揃え */
-    margin-right: auto;
-    margin-bottom: 10px;  /* 動画とキャプションの隙間 */
-    max-width: 100%;      /* 親要素からはみ出さない */
+/* =====================================================
+   ヘッダー（左側固定レイアウト対応）
+   ===================================================== */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100vh;
 }
 
-/* 修正：画像や動画の真下・真ん中に表示するキャプションの設定 */
+.logo-image {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    margin: 0;
+    color: #222;
+    font-weight: bold;
+}
+
+/* =====================================================
+   共通セクション設定
+   ===================================================== */
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+}
+
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+/* =====================================================
+   実績 (Works) - グリッドとアイテム
+   ===================================================== */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+.work-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    /* アイテム内要素の中央揃えの起点 */
+    text-align: center; 
+}
+
+.work-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* 画像と動画のスタイル（真ん中・真下へ） */
+.work-image, .work-video {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 10px !important; /* キャプションとの隙間 */
+    width: 100%;
+}
+
+.work-item h3 {
+    font-size: 20px;
+    padding: 15px 20px;
+    margin: 0;
+    text-align: left; /* 見出しは左寄せ */
+}
+
+/* ★★★ 修正ポイント：キャプション ★★★ */
 .caption {
-    display: block;       /* 確実に改行させる */
-    text-align: center;   /* 文字列を中央揃え（真ん中）に */
-    font-size: 15px;      /* 見やすい大きさ */
-    font-weight: bold;    /* タイトルなので太字に */
-    color: #444;          /* 少し濃いめのグレー */
-    margin-top: 0;        /* 画像・動画との隙間は上（image/video）で制御 */
-    margin-bottom: 40px;  /* 【上下の余白】次の要素との大きな隙間 */
-    padding: 0 20px;      /* 左右に少し余裕を持たせる（文字が詰まらないように） */
+    display: block !important;
+    text-align: center !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #444 !important;
+    margin-top: 0 !important;
+    margin-bottom: 40px !important; /* 下の要素との大きな余白 */
+    padding: 0 20px;
 }
 
-/* 実績内の各段落（pタグ）のスタイル（中央揃えを解除したい場合） */
+/* 実績内の説明文（左寄せに戻す） */
 .work-item p:not(.caption) {
-    text-align: left;     /* キャプション以外の本文は左寄せに戻す（読みやすさ優先） */
-    margin-top: 15px;
-    margin-bottom: 15px;
-    line-height: 1.8;     /* 行間を少し広げて読みやすく */
-    padding: 0 20px;      /* 左右のパディングを維持 */
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+}
+
+.work-item a {
+    display: inline-block;
+    padding: 0 20px 15px 20px;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+}
+
+/* =====================================================
+   コンタクト・フッター
+   ===================================================== */
+#contact {
+    text-align: center;
+}
+
+.contact-email,
+.contact-twitter {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+    margin: 10px 0;
+}
+
+footer {
+    background: #333;
+    color: #eee;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* =====================================================
+   レスポンシブ (1100px未満)
+   ===================================================== */
+@media (max-width: 1099px) {
+    .works-grid {
+        grid-template-columns: 1fr; 
+    }
+    header {
+        height: auto;
+    }
+}
+
+/* =====================================================
+   ワイドスクリーン用 (1100px以上)
+   ===================================================== */
+@media screen and (min-width: 1100px) {
+    body {
+        display: grid;
+        grid-template-columns: 500px 1fr;
+    }
+
+    header {
+        grid-column: 1 / 2;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        border-right: 1px solid #eee;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+
+    main, footer {
+        grid-column: 2 / 3;
+    }
 }
