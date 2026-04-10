@@ -8,6 +8,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #fafafa;
+    /* 方眼紙のような背景 */
     background-image:
         linear-gradient(to right, #e0e0e0 1px, transparent 1px),
         linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
@@ -15,8 +16,8 @@ body {
 }
 
 .container {
-    width: 95%; /* 幅を少し広げました */
-    max-width: 1000px; 
+    width: 95%;
+    max-width: 900px; /* 全体の幅を少し絞って見やすくしました */
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -41,7 +42,7 @@ img {
 
 /* =====================================================
    ヘッダー（左側固定レイアウト対応）
-   ===================================================== */
+   ==================================================== */
 header {
     display: flex;
     flex-direction: column;
@@ -53,8 +54,12 @@ header {
 }
 
 .logo-image {
+    width: 65%;
+    max-width: 250px; /* ロゴ画像が大きすぎないように制限 */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px; 
+    margin: 0 auto;
+    display: block;
 }
 
 header .container {
@@ -65,7 +70,7 @@ header .container {
 
 header .logo {
     font-size: 24px;
-    margin: 0;
+    margin: 0 0 20px 0;
     color: #222;
     font-weight: bold;
 }
@@ -105,66 +110,110 @@ header .logo {
    ===================================================== */
 .works-grid {
     display: flex;
-    flex-direction: column; /* 実績1, 2, 3は縦に並べる */
+    flex-direction: column; 
     gap: 50px;
 }
 
 .work-item {
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     background: #fff;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
-/* ★ 画像を横並びにするエリア ★ */
+.work-item h3 {
+    font-size: 22px;
+    padding: 20px;
+    margin: 0;
+    background: #fcfcfc;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.work-item p:not(.caption) {
+    padding: 15px 25px;
+    margin: 0;
+    font-size: 15px;
+    color: #444;
+    text-align: left;
+}
+
+/* --- 画像横並びエリア --- */
 .work-image-container {
     display: flex;
-    flex-wrap: wrap; /* 画面が狭いときは折り返す */
+    flex-wrap: wrap; 
     justify-content: center;
-    gap: 20px; /* 画像同士の隙間 */
+    gap: 15px;
     padding: 20px;
 }
 
-/* 各画像とキャプションのセット */
+/* 各画像とキャプションのセット（ここが巨大化防止の鍵） */
 .image-unit {
-    flex: 1; /* 均等な幅にする */
-    min-width: 250px; /* 狭くなりすぎないように制限 */
-    max-width: 400px;
+    flex: 1;
+    min-width: 250px; 
+    max-width: 380px; /* ★ここで1枚あたりの最大サイズを制限 */
     text-align: center;
+    margin: 0 auto;
 }
 
 .work-image {
     width: 100%;
-    height: 250px; /* 高さを揃える */
-    object-fit: cover; /* 切り抜いてフィットさせる */
+    max-width: 100%;
+    height: 220px;   /* 高さを適度に固定して揃える */
+    object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    display: block;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* 動画エリア */
+.work-video {
+    width: 90%;
+    max-width: 500px; /* 動画も大きくなりすぎないように */
+    aspect-ratio: 16 / 9;
+    margin: 20px auto 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.work-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* キャプション（真ん中・真下・余白） */
 .caption {
     display: block;
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-    color: #444;
-    margin-bottom: 10px;
+    color: #666;
+    margin-bottom: 25px; /* 下の要素との隙間 */
+    padding: 0 10px;
 }
 
-.work-item h3 {
-    font-size: 22px;
-    padding: 20px 20px 10px;
-    margin: 0;
-    border-bottom: 1px solid #eee;
+/* =====================================================
+   コンタクト・フッター
+   ===================================================== */
+#contact { text-align: center; }
+.contact-email, .contact-twitter {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    margin: 10px 0;
 }
 
-.work-item p:not(.caption) {
-    padding: 10px 20px;
-    margin: 0;
-    font-size: 15px;
-    color: #555;
-    text-align: left;
+footer {
+    background: #333;
+    color: #eee;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
 }
 
 /* =====================================================
@@ -173,7 +222,7 @@ header .logo {
 @media screen and (min-width: 1100px) {
     body {
         display: grid;
-        grid-template-columns: 450px 1fr;
+        grid-template-columns: 400px 1fr; /* 左側の幅を少し詰めました */
     }
 
     header {
@@ -183,14 +232,16 @@ header .logo {
         height: 100vh;
         border-right: 1px solid #eee;
         background: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 40px;
+        padding-top: 60px;
     }
 
     main, footer {
         grid-column: 2 / 3;
     }
+}
+
+/* スマホ表示の調整 */
+@media screen and (max-width: 1099px) {
+    header { height: auto; padding: 40px 20px; }
+    .work-image { height: auto; max-height: 250px; }
 }
