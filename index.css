@@ -230,3 +230,37 @@ footer {
         grid-column: 2 / 3;
     }
 }
+
+/* ===============================
+   Achievement セクション用 横スクロール
+=============================== */
+
+#Achievement .container {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#Achievement .works-grid {
+  display: flex;
+  gap: 20px;
+  min-width: min-content;
+  padding-bottom: 10px;
+}
+
+#Achievement .work-item {
+  flex: 0 0 350px;
+  min-height: 100%;
+}
+
+/* スマートフォン時は通常表示に戻す */
+@media screen and (max-width: 599px) {
+  #Achievement .works-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: auto;
+  }
+
+  #Achievement .work-item {
+    flex: none;
+  }
+}
