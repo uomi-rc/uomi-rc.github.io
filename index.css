@@ -143,14 +143,11 @@ header .logo {
 
 /* ★★★ 修正ポイント：キャプション ★★★ */
 .caption {
-    display: block !important;
-    text-align: center !important;
-    font-size: 15px !important;
-    font-weight: bold !important;
-    color: #444 !important;
-    margin-top: 0 !important;
-    margin-bottom: 40px !important; /* 下の要素との大きな余白 */
-    padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+  margin-bottom: 15px;
 }
 
 /* 実績内の説明文（左寄せに戻す） */
