@@ -264,3 +264,104 @@ footer {
     flex: none;
   }
 }
+
+/* =====================================================
+   Research セクション専用スタイル
+   ===================================================== */
+.research-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.research-content h3 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.research-block {
+    margin-bottom: 25px;
+}
+
+.research-block h4 {
+    font-size: 18px;
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.research-block p {
+    line-height: 1.8;
+    color: #444;
+}
+
+/* PDFリンクカードのデザイン */
+.pdf-link-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.pdf-card {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    max-width: 500px;
+    width: 100%;
+}
+
+.pdf-card:hover {
+    background: #e9ecef;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pdf-thumb {
+    width: 80px;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+}
+
+.pdf-tag {
+    display: inline-block;
+    background: #dc3545;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.pdf-title {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.pdf-desc {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+/* スマホ表示での調整 */
+@media (max-width: 600px) {
+    .pdf-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .pdf-thumb {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
