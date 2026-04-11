@@ -115,6 +115,35 @@
         grid-template-columns: 600px 1fr;
 
       }
+          /* ===============================
+       ACHIEVEMENT セクション用スタイル
+    =============================== */
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      width: 100%;
+    }
+
+    /* PC表示時（600px以上）：3列で表示 */
+    @media screen and (min-width: 900px) {
+      .works-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* タブレット表示時（600px以上 900px未満）：2列で表示 */
+    @media screen and (min-width: 600px) and (max-width: 899px) {
+      .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .work-item {
+      display: flex;
+      flex-direction: column;
+    }
 
 
 
